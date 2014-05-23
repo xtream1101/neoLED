@@ -1,0 +1,32 @@
+#:kivy 1.0.9
+
+<HomeScreen>:
+	GridLayout:
+    	cols: 1
+    	Button:
+        	text: 'Rainbow'
+        	on_release: root.setRainbow()
+		GridLayout:
+	    	cols: 2
+	    	GridLayout:
+	    		cols: 1
+		    	Button:
+		        	text: 'Red TL'
+		        	on_release: root.setRedL()
+		        Button:
+		        	text: 'Green TL'
+		        	on_release: root.setGreenL()
+		        Button:
+		        	text: 'Blue TL'
+		        	on_release: root.setBlueL()
+		    GridLayout:
+	    		cols: 1
+		    	Button:
+		        	text: 'Red TR'
+		        	on_release: root.setRedR()
+		        Button:
+		        	text: 'Green TR'
+		        	on_release: root.setGreenR()
+		        Button:
+		        	text: 'Blue TR'
+		        	on_release: root.setBlueR()
