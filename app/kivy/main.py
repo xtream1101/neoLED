@@ -16,25 +16,25 @@ class HomeScreen(Screen):
         time.sleep(1)
         tn.close
     def setRainbow(self):
-        self.sendCmd("rainbowCycle:25")
+        self.sendCmd(":rainbowCycle:25:")
 
     def setRedL(self):
-        self.sendCmd("wipe:TL:10:255:0:0;")
+        self.sendCmd(":wipe:TL:10:255:0:0:")
         
     def setGreenL(self):
-        self.sendCmd("wipe:TL:10:0:255:0;")
+        self.sendCmd(":wipe:TL:10:0:255:0:")
         
     def setBlueL(self):
-        self.sendCmd("wipe:TL:10:0:0:255;")
+        self.sendCmd(":wipe:TL:10:0:0:255:")
         
     def setRedR(self):
-        self.sendCmd("wipe:TR:10:255:0:0;")
+        self.sendCmd(":wipe:TR:10:255:0:0:")
         
     def setGreenR(self):
-        self.sendCmd("wipe:TR:10:0:255:0;")
+        self.sendCmd(":wipe:TR:10:0:255:0:")
         
     def setBlueR(self):
-        self.sendCmd("wipe:TR:10:0:0:255;")
+        self.sendCmd(":wipe:TR:10:0:0:255:")
         
 
 class NeoLEDApp(App):
