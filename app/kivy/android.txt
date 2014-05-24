@@ -1,0 +1,3 @@
+title=NeoLED
+author=Eddy Hintze
+orientation=landscape
