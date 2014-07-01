@@ -10,7 +10,7 @@ RGBConvert convert;
 
 SoftwareSerial wifi(2, 3); // RX, TX
 String rawCmd;
-bool cycle = false;
+bool cycle = true;
  
 void setup(){
 
@@ -23,12 +23,13 @@ void setup(){
 
 void loop(){
 
-    if(cycle) parseCmd(rawCmd);
+    if(cycle && rawCmd == "") rainbowCycle(25, 60);//on startup
+    else if(cycle && rawCmd != "") parseCmd(rawCmd);
     
     if (wifi.available() > 0){
         rawCmd = wifi.readString();
         Serial.println(rawCmd);
-        parseCmd(rawCmd); 
+        parseCmd(rawCmd);
     }   
        
 } //END loop()
@@ -245,12 +246,12 @@ void rCycleBounce(int wait, uint32_t c1, uint32_t c2){
 // From Adafruit examples //
 ////////////////////////////
 
-void rainbowCycle(uint8_t wait){
+void rainbowCycle(uint8_t wait, int length){
     uint16_t i, j;
 
     for(j=0; j<256; j++){
-        for(i=0; i< strip[0].numPixels(); i++){
-            strip[0].setPixelColor(i, Wheel(((i * 256 / strip[0].numPixels()) + j) & 255));
+        for(i=0; i< length; i++){
+            strip[0].setPixelColor(i, Wheel(((i * 256 / length) + j) & 255));
         }
         strip[0].show();
         delay(wait);
